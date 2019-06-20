@@ -25,6 +25,7 @@ public class Menu {
 	 * des ingrédients correspondants de type passé en paramètre(Entree, Plat, Dessert)
 	 */
 	public void listeIngredient(RecetteCuisine etapeMenu) {
+
 		if(etapeMenu instanceof Entree) {
 			for(Ingredient ingredient : this.entree.getIngredients()) {
 				System.out.println(ingredient.getNom());
@@ -38,6 +39,30 @@ public class Menu {
 				System.out.println(ingredient.getNom());
 			}
 		}
+	}
+
+	public float calculNutriscore() {
+		float nutriscore = 0;
+		float nbIngredient =0;
+		for(Ingredient ingredient : this.entree.getIngredients()) {
+			nutriscore+=ingredient.getValeurNutritive();
+
+			nbIngredient++;
+		}
+		for(Ingredient ingredient : this.plat.getIngredients()) {
+			nutriscore+=ingredient.getValeurNutritive();
+
+			nbIngredient++;
+		}
+		for(Ingredient ingredient : this.dessert.getIngredients()) {
+			nutriscore+=ingredient.getValeurNutritive();
+
+			nbIngredient++;
+		}
+
+		System.out.println(nutriscore+" "+nbIngredient);
+		return nutriscore/nbIngredient;
+
 	}
 
 	public Plat getPlat() {

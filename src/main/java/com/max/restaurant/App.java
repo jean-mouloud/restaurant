@@ -35,5 +35,8 @@ public class App
 		formuleMidi.listeIngredient(saladeVerte);
 		formuleMidi.listeIngredient(plateauFromage);
 		//for(Ingredient ingredient : formuleMidi.)
+
+		float formuleMidiNutriscore = formuleMidi.calculNutriscore();
+		System.out.println(formuleMidiNutriscore);
 	}
 }
