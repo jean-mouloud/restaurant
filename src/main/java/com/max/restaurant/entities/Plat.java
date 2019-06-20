@@ -1,5 +1,9 @@
 package com.max.restaurant.entities;
 
-public class Plat {
+public class Plat extends RecetteCuisine {
+
+	public Plat() {
+		super();
+	}
 
 }
