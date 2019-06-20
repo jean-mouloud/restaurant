@@ -18,6 +18,28 @@ public class Menu {
 		this.dessert = dessert;
 	}
 
+	/**
+	 *
+	 * @param etapeMenu type RecetteCuisine
+	 * Methode qui vérifie le type de recetteCuisine et parcourt la liste
+	 * des ingrédients correspondants de type passé en paramètre(Entree, Plat, Dessert)
+	 */
+	public void listeIngredient(RecetteCuisine etapeMenu) {
+		if(etapeMenu instanceof Entree) {
+			for(Ingredient ingredient : this.entree.getIngredients()) {
+				System.out.println(ingredient.getNom());
+			}
+		}else if( etapeMenu instanceof Plat) {
+			for (Ingredient ingredient: this.plat.getIngredients()) {
+				System.out.println(ingredient.getNom());
+			}
+		}else if (etapeMenu instanceof Dessert){
+			for(Ingredient ingredient : this.plat.getIngredients()) {
+				System.out.println(ingredient.getNom());
+			}
+		}
+	}
+
 	public Plat getPlat() {
 		return plat;
 	}

@@ -19,6 +19,10 @@ public abstract class RecetteCuisine {
 		this.ingredients = ingredients;
 	}
 
+	public void addIngredient(Ingredient ing) {
+		this.ingredients.add(ing);
+	}
+
 	@Override
 	public String toString() {
 		return "RecetteCuisine [ingredients=" + ingredients + "]";
